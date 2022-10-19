@@ -5,11 +5,11 @@ import botometer
 import sys
 
 # request API
-consumer_key = "XwK3IS0ldbT4FZ5fYLbZ3wDnU"
-consumer_secret = "ytl8OhWaR1xGyO43JC0nfHkOD3e6SjghgKq7t5FVebYaee1zaM"
-access_token = "1579831536119156741-4CF8Y5ehj9kmINXnLRcUlAnRTXsGAN"
-access_token_secret = "lnLf5QuTKqZp7PktjzRHlpOqdYTdQsiRO9VVT4QZ80Vt6"
-rapidapi_key = "5fbf5733d2msh9e24044ca46daccp123a06jsn511d4dead8aa"
+consumer_key = ""
+consumer_secret = ""
+access_token = ""
+access_token_secret = ""
+rapidapi_key = ""
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -25,7 +25,6 @@ twitter_app_auth = {
 
 
 def sentiment_analysis(keyword, num):
-    # keyword = 'League of Legends', 'LoL'
     # retrieve tweets
     tweets = tweepy.Cursor(api.search, q=keyword, lang="en").items(num)
 
@@ -74,9 +73,9 @@ def sentiment_analysis(keyword, num):
 
     # polarity judgement
     if average > 0:
-        print("nice product!")
+        print("Positive.")
     else:
-        print("not recommended product!")
+        print("Negative.")
     return
 
 
